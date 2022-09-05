@@ -1,0 +1,7 @@
+.elements_flex{
+  max-width: 246px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 31px;
+}
