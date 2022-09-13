@@ -1,5 +1,5 @@
 let popupPage = document.querySelector('.page__darked')
-let editButton = document.querySelector('.button_edit');
+let editButton = document.querySelector('.profile__button_edit');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__job');
 let popupContainer = document.querySelector('.popup');
