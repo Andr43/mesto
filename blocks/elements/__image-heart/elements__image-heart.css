@@ -1,0 +1,5 @@
+.elements__image-heart:active {
+  position: relative;
+  content: url("file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/elements__heart_active.svg");
+  opacity: 1;
+}

@@ -1,5 +1,17 @@
-.elements__image{
+.elements__image {
   max-width: 282px;
   max-height: 282px;
   margin-bottom: 25px;
+}
+@media screen and (max-width: 1024px) {
+  .elements__image {
+    max-width: 252px;
+    max-height: 252px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 450px) {
+  .elements__image {
+    max-width: 282px;
+    max-height: 282px;
+  }
 }
