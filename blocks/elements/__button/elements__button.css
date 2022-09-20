@@ -3,9 +3,11 @@
   margin-top: 5px;
   padding: 0;
   background-color: transparent;
-  max-height: 19px;
+  width: 22px;
+  height: 19px;
   border: 0;
   outline: 0;
+  background: url('file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/elements__heart.svg');
 }
 .elements__button:hover {
   opacity: 0.5;
@@ -13,4 +15,5 @@
 
 .elements__button:active {
   opacity: 1;
+  background: url('file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/elements__heart_active.svg');
 }

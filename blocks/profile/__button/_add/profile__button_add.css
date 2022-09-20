@@ -1,12 +1,15 @@
 .profile__button_add {
-  padding: 0;
-  margin-top: 35px;
-  margin-left: 170px;
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  width: 150px;
-  height: 50px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    width: 150px;
+    height: 50px;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+    justify-self: end;
+    background: url('file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/profile__button_add.svg') 50% 50% no-repeat;
 }
 .profile__button_add:hover {
   opacity: 0.6;
@@ -25,10 +28,11 @@
   }
 }
 @media screen and (min-width: 320px) and (max-width: 450px) {
-  .button_add {
+  .profile__button_add {
     margin: 0;
     width: 100%;
     order: 3;
     grid-area: E;
+    background-size: 16px 16px;
   }
 }

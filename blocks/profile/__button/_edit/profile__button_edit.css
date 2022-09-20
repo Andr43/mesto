@@ -1,11 +1,14 @@
 .profile__button_edit {
-  margin: 0;
-  margin-top: 37px;
-  padding: 0;
+  margin-bottom: 7px;
+  margin-left: 15px;
   width: 24px;
   height: 24px;
-  background-color: transparent;
-  border: 0;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: end;
+  background: url('file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/profile__edit_button.svg') 50% 50% no-repeat;
 }
 .profile__button_edit:hover {
   opacity: 0.6;
@@ -32,5 +35,6 @@
     margin-left: 30px;
     margin-bottom: 10px;
     justify-self: center;
+    background-size: 7.5px 7.5px;
   }
 }

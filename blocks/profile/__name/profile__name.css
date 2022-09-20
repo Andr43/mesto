@@ -2,14 +2,19 @@
   min-width: 294px;
   max-height: 48px;
   margin: 0;
-  margin-left: -210px;
-  margin-right: 10px;
-  margin-top: 22px;
-  margin-bottom: 16px;
+  margin-left: 145px;
   padding: 0;
   font-weight: 500;
   font-size: 42px;
   line-height: 114%;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  align-self: end;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .profile__name {

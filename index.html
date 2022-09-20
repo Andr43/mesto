@@ -8,7 +8,6 @@
     <title>Mesto</title>
   </head>
   <body class="page">
-    <div class="page__darked">
     <header class="header">
       <img
         src="./images/header__logo.svg"
@@ -24,146 +23,159 @@
           class="profile__avatar"
         />
         <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <button class="profile__button profile__button_edit">
-          <img
-            class="profile__image profile__image_edit"
-            src="./images/profile__edit_button.svg"
-            alt="кнопка редактирования профиля"
-          />
-        </button>
-        <button class="profile__button profile__button_add">
-          <img
-            class="profile__image profile__image_add"
-            src="./images/profile__add_button.png"
-            alt="кнопка добавления изменений"
-          />
-        </button>
+        <button
+          aria-label="перейти к полям ввода для изменения профиля"
+          type="button"
+          class="profile__button profile__button_edit"
+        ></button>
+        <button
+          aria-label="добавить новую карточку"
+          type="button"
+          class="profile__button profile__button_add"
+        ></button>
         <p class="profile__job">Исследователь океана</p>
       </section>
       <section class="elements">
-        <article class="elements__element">
-          <img
-            src="./images/elements__karachaevsk.jpg"
-            alt="заброшенное кирпичное здание похожее на церковь стоит на фоне зеленых гор с деревьями"
-            class="elements__image"
-          />
-          <div class="elements__flex">
-            <h3 class="elements__heading">Карачаевск</h3>
-            <button class="elements__button">
+        <ul class="elements__list">
+          <li class="elements__element">
+            <article>
               <img
-                class="elements__image-heart"
-                src="./images/elements__heart.svg"
-                alt="сердце для добавления в избранное"
+                src="./images/elements__karachaevsk.jpg"
+                alt="заброшенное кирпичное здание похожее на церковь стоит на фоне зеленых гор с деревьями"
+                class="elements__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="elements__element">
-          <img
-            src="./images/elements__elbrus.jpg"
-            alt="фото равнины в горах в закате на заднем плане две вершины Эльбруса"
-            class="elements__image"
-          />
-          <div class="elements__flex">
-            <h3 class="elements__heading">Гора Эльбрус</h3>
-            <button class="elements__button">
+              <div class="elements__flex">
+                <h3 class="elements__heading">Карачаевск</h3>
+                <button
+                  aria-label="добавить в избранное"
+                  type="button"
+                  class="elements__button"
+                ></button>
+              </div>
+            </article>
+          </li>
+          <li class="elements__element">
+            <article>
               <img
-                class="elements__image-heart"
-                src="./images/elements__heart.svg"
-                alt="сердце для добавления в избранное"
+                src="./images/elements__elbrus.jpg"
+                alt="фото равнины в горах в закате на заднем плане две вершины Эльбруса"
+                class="elements__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="elements__element">
-          <img
-            src="./images/elements__dombai.jpg"
-            alt="осенний лес на фоне острой вершины горы с правой стороны от вершины пологий спуск на котором лежит снег"
-            class="elements__image"
-          />
-          <div class="elements__flex">
-            <h3 class="elements__heading">Домбай</h3>
-            <button class="elements__button">
+              <div class="elements__flex">
+                <h3 class="elements__heading">Гора Эльбрус</h3>
+                <button
+                  aria-label="добавить в избранное"
+                  type="button"
+                  class="elements__button"
+                ></button>
+              </div>
+            </article>
+          </li>
+          <li class="elements__element">
+            <article>
               <img
-                class="elements__image-heart"
-                src="./images/elements__heart.svg"
-                alt="сердце для добавления в избранное"
+                src="./images/elements__dombai.jpg"
+                alt="осенний лес на фоне острой вершины горы с правой стороны от вершины пологий спуск на котором лежит снег"
+                class="elements__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="elements__element">
-          <img
-            src="./images/elements__elbrus.jpg"
-            alt="фото равнины в горах в закате на заднем плане две вершины Эльбруса"
-            class="elements__image"
-          />
-          <div class="elements__flex">
-            <h3 class="elements__heading">Гора Эльбрус</h3>
-            <button class="elements__button">
+              <div class="elements__flex">
+                <h3 class="elements__heading">Домбай</h3>
+                <button
+                  aria-label="добавить в избранное"
+                  type="button"
+                  class="elements__button"
+                ></button>
+              </div>
+            </article>
+          </li>
+          <li class="elements__element">
+            <article>
               <img
-                class="elements__image-heart"
-                src="./images/elements__heart.svg"
-                alt="сердце для добавления в избранное"
+                src="./images/elements__elbrus.jpg"
+                alt="фото равнины в горах в закате на заднем плане две вершины Эльбруса"
+                class="elements__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="elements__element">
-          <img
-            src="./images/elements__dombai.jpg"
-            alt="осенний лес на фоне острой вершины горы с правой стороны от вершины пологий спуск на котором лежит снег"
-            class="elements__image"
-          />
-          <div class="elements__flex">
-            <h3 class="elements__heading">Домбай</h3>
-            <button class="elements__button">
+              <div class="elements__flex">
+                <h3 class="elements__heading">Гора Эльбрус</h3>
+                <button
+                  aria-label="добавить в избранное"
+                  type="button"
+                  class="elements__button"
+                ></button>
+              </div>
+            </article>
+          </li>
+          <li class="elements__element">
+            <article>
               <img
-                class="elements__image-heart"
-                src="./images/elements__heart.svg"
-                alt="сердце для добавления в избранное"
+                src="./images/elements__dombai.jpg"
+                alt="осенний лес на фоне острой вершины горы с правой стороны от вершины пологий спуск на котором лежит снег"
+                class="elements__image"
               />
-            </button>
-          </div>
-        </article>
-        <article class="elements__element">
-          <img
-            src="./images/elements__karachaevsk.jpg"
-            alt="заброшенное кирпичное здание похожее на церковь стоит на фоне зеленых гор с деревьями"
-            class="elements__image"
-          />
-          <div class="elements__flex">
-            <h3 class="elements__heading">Карачаево-Черкессия</h3>
-            <button class="elements__button">
+              <div class="elements__flex">
+                <h3 class="elements__heading">Домбай</h3>
+                <button
+                  aria-label="добавить в избранное"
+                  type="button"
+                  class="elements__button"
+                ></button>
+              </div>
+            </article>
+          </li>
+          <li class="elements__element">
+            <article>
               <img
-                class="elements__image-heart"
-                src="./images/elements__heart.svg"
-                alt="сердце для добавления в избранное"
+                src="./images/elements__karachaevsk.jpg"
+                alt="заброшенное кирпичное здание похожее на церковь стоит на фоне зеленых гор с деревьями"
+                class="elements__image"
               />
-            </button>
-          </div>
-        </article>
+              <div class="elements__flex">
+                <h3 class="elements__heading">Карачаево-Черкессия</h3>
+                <button
+                  aria-label="добавить в избранное"
+                  type="button"
+                  class="elements__button"
+                ></button>
+              </div>
+            </article>
+          </li>
+        </ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-  </div>
+    <div class="popup-bg">
       <div class="popup">
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form class="popup__form" action="#">
-          <input id="name" class="popup__field" type="text" />
-          <input id="job" class="popup__field" type="text" />
-          <input class="popup__button" type="submit" value="Сохранить" />
+          <input
+            placeholder="Жак-Ив Кусто"
+            id="name"
+            class="popup__field"
+            type="text"
+          />
+          <input
+            placeholder="Исследователь океана"
+            id="job"
+            class="popup__field"
+            type="text"
+          />
+          <button
+            aria-label="сохранить внесенные изменения"
+            class="popup__button popup__button_save"
+            type="submit"
+          >
+            Сохранить
+          </button>
         </form>
       </div>
-    <button class="close-button">
-      <img
-        class="close-button__image"
-        src="./images/close-button.png"
-        alt="крестик закрывающий окно"
-      />
-    </button>
+      <button
+        aria-label="закрыть всплывающее окно"
+        class="popup__button popup__button_close"
+        type="button"
+      ></button>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
