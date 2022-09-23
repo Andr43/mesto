@@ -9,7 +9,7 @@
   background-color: transparent;
   border: 0;
   outline: 0;
-  background: url(' file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/close-button.svg');
+  background: url('../../../../images/close-button.svg');
 }
 .popup__button_close:hover {
   opacity: 0.6;

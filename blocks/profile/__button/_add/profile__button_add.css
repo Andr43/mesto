@@ -9,7 +9,7 @@
     grid-row-end: 3;
     align-self: center;
     justify-self: end;
-    background: url('file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/profile__button_add.svg') 50% 50% no-repeat;
+    background: url('../../../../images/profile__button_add.svg') 50% 50% no-repeat;
 }
 .profile__button_add:hover {
   opacity: 0.6;

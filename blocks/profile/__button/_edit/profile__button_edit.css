@@ -8,7 +8,7 @@
   grid-row-start: 1;
   grid-row-end: 2;
   align-self: end;
-  background: url('file:///C:/Users/Андрей%20Мусинов/Desktop/Программирование/Яндекс/dev/mesto/images/profile__edit_button.svg') 50% 50% no-repeat;
+  background: url('../../../../images/profile__edit_button.svg') 50% 50% no-repeat;
 }
 .profile__button_edit:hover {
   opacity: 0.6;
