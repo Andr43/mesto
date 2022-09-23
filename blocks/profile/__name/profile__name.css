@@ -24,8 +24,11 @@
     margin: 0 auto;
     margin-bottom: 14px;
     margin-left: 75px;
-    order: 1;
-    grid-area: B;
+    align-self: flex-start;    
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 450px) {
@@ -36,7 +39,9 @@
     margin: 0 auto;
     margin-bottom: 14px;
     margin-left: 50px;
-    order: 1;
-    grid-area: B;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
 }

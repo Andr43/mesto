@@ -19,10 +19,12 @@
     font-size: 17px;
     line-height: 17px;
     margin: 0 auto;
-    margin-bottom: 36px;
     text-align: center;
-    order: 2;
-    grid-area: D;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    align-self: flex-end;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 450px) {
@@ -30,9 +32,10 @@
     font-size: 14px;
     line-height: 17px;
     margin: 0 auto;
-    margin-bottom: 36px;
     text-align: center;
-    order: 2;
-    grid-area: D;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
 }

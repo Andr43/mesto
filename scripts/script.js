@@ -8,32 +8,25 @@ let popupFieldJob = document.querySelector("#job");
 let saveButton = document.querySelector(".popup__button_save");
 let closeButton = document.querySelector(".popup__button_close");
 
-function openPopup() {
-  editButton.addEventListener("click", function () {
-    popupContainer.classList.add("popup_opened");
-    closeButton.classList.add("popup_opened");
-  });
-}
-openPopup();
+editButton.addEventListener("click", function () {
+  popupContainer.classList.add("popup_opened");
+  popupFieldName.value = "Жак-Ив Кусто";
+  popupFieldJob.value = "Исследователь океана";
+});
 
-popupForm.addEventListener("click", () => {
-  function formSubmitHandler(evt) {
-    profileName.textContent = popupFieldName.value;
-    profileJob.textContent = popupFieldJob.value;
-    evt.preventDefault();
-  }
-  popupForm.addEventListener("submit", formSubmitHandler);
+popupForm.addEventListener("submit", () => {
+  profileName.textContent = popupFieldName.value;
+  profileJob.textContent = popupFieldJob.value;
+  saveButton.addEventListener("click", function () {
+    closePopup();
+  });
+  preventDefault();
 });
 
 function closePopup() {
   popupContainer.classList.remove("popup_opened");
-  closeButton.classList.remove("popup_opened");
 }
 
 closeButton.addEventListener("click", function () {
-  closePopup();
-});
-
-saveButton.addEventListener("click", function () {
   closePopup();
 });

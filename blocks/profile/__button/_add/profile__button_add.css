@@ -23,16 +23,24 @@
   .profile__button_add {
     margin: 0 auto;
     width: 70%;
-    order: 3;
-    grid-area: E;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    align-self: flex-start;
+    margin-top: 36px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 450px) {
   .profile__button_add {
     margin: 0;
     width: 100%;
-    order: 3;
-    grid-area: E;
     background-size: 16px 16px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    align-self: flex-start;
+    margin-top: 36px;
   }
 }
