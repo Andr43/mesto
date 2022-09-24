@@ -10,17 +10,15 @@ let closeButton = document.querySelector(".popup__button_close");
 
 editButton.addEventListener("click", function () {
   popupContainer.classList.add("popup_opened");
-  popupFieldName.value = "Жак-Ив Кусто";
-  popupFieldJob.value = "Исследователь океана";
-});
-
-popupForm.addEventListener("submit", () => {
   profileName.textContent = popupFieldName.value;
   profileJob.textContent = popupFieldJob.value;
-  saveButton.addEventListener("click", function () {
-    closePopup();
-  });
-  preventDefault();
+});
+
+popupForm.addEventListener("submit", (evt) => {
+  profileName.textContent = popupFieldName.value;
+  profileJob.textContent = popupFieldJob.value;
+  closePopup();
+  evt.preventDefault();
 });
 
 function closePopup() {
