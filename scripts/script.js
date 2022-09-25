@@ -10,8 +10,8 @@ let closeButton = document.querySelector(".popup__button_close");
 
 editButton.addEventListener("click", function () {
   popupContainer.classList.add("popup_opened");
-  profileName.textContent = popupFieldName.value;
-  profileJob.textContent = popupFieldJob.value;
+  popupFieldName.value = profileName.textContent;
+  popupFieldJob.value = profileJob.textContent;
 });
 
 popupForm.addEventListener("submit", (evt) => {
