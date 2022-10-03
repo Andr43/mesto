@@ -1,19 +1,11 @@
-.elements__button {
+.elements__button{
   margin: 0;
-  margin-top: 5px;
   padding: 0;
   background-color: transparent;
-  width: 22px;
-  height: 19px;
   border: 0;
   outline: 0;
-  background: url('../../../images/elements__heart.svg');
+  cursor: pointer;
 }
 .elements__button:hover {
   opacity: 0.5;
-}
-
-.elements__button:active {
-  opacity: 1;
-  background: url('../../../images/elements__heart_active.svg');
 }

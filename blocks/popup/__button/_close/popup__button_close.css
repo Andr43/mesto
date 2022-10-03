@@ -9,6 +9,7 @@
   border: 0;
   outline: 0;
   background: url('../../../../images/close-button.svg');
+  cursor: pointer;
 }
 .popup__button_close:hover {
   opacity: 0.6;

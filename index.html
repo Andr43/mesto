@@ -36,117 +36,30 @@
         <p class="profile__job">Исследователь океана</p>
       </section>
       <section class="elements">
-        <ul class="elements__list">
-          <li class="elements__element">
-              <img
-                src="./images/elements__karachaevsk.jpg"
-                alt="заброшенное кирпичное здание похожее на церковь стоит на фоне зеленых гор с деревьями"
-                class="elements__image"
-              />
-              <div class="elements__flex">
-                <h3 class="elements__heading">Карачаевск</h3>
-                <button
-                  aria-label="добавить в избранное"
-                  type="button"
-                  class="elements__button"
-                ></button>
-              </div>
-          </li>
-          <li class="elements__element">
-              <img
-                src="./images/elements__elbrus.jpg"
-                alt="фото равнины в горах в закате на заднем плане две вершины Эльбруса"
-                class="elements__image"
-              />
-              <div class="elements__flex">
-                <h3 class="elements__heading">Гора Эльбрус</h3>
-                <button
-                  aria-label="добавить в избранное"
-                  type="button"
-                  class="elements__button"
-                ></button>
-              </div>
-          </li>
-          <li class="elements__element">
-              <img
-                src="./images/elements__dombai.jpg"
-                alt="осенний лес на фоне острой вершины горы с правой стороны от вершины пологий спуск на котором лежит снег"
-                class="elements__image"
-              />
-              <div class="elements__flex">
-                <h3 class="elements__heading">Домбай</h3>
-                <button
-                  aria-label="добавить в избранное"
-                  type="button"
-                  class="elements__button"
-                ></button>
-              </div>
-          </li>
-          <li class="elements__element">
-              <img
-                src="./images/elements__elbrus.jpg"
-                alt="фото равнины в горах в закате на заднем плане две вершины Эльбруса"
-                class="elements__image"
-              />
-              <div class="elements__flex">
-                <h3 class="elements__heading">Гора Эльбрус</h3>
-                <button
-                  aria-label="добавить в избранное"
-                  type="button"
-                  class="elements__button"
-                ></button>
-              </div>
-          </li>
-          <li class="elements__element">
-              <img
-                src="./images/elements__dombai.jpg"
-                alt="осенний лес на фоне острой вершины горы с правой стороны от вершины пологий спуск на котором лежит снег"
-                class="elements__image"
-              />
-              <div class="elements__flex">
-                <h3 class="elements__heading">Домбай</h3>
-                <button
-                  aria-label="добавить в избранное"
-                  type="button"
-                  class="elements__button"
-                ></button>
-              </div>
-          </li>
-          <li class="elements__element">
-              <img
-                src="./images/elements__karachaevsk.jpg"
-                alt="заброшенное кирпичное здание похожее на церковь стоит на фоне зеленых гор с деревьями"
-                class="elements__image"
-              />
-              <div class="elements__flex">
-                <h3 class="elements__heading">Карачаево-Черкессия</h3>
-                <button
-                  aria-label="добавить в избранное"
-                  type="button"
-                  class="elements__button"
-                ></button>
-              </div>
-          </li>
-        </ul>
+        <ul class="elements__list"></ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup__edit">
       <div class="popup__container">
         <h3 class="popup__heading">Редактировать профиль</h3>
-        <form class="popup__form" action="#" name="popup-form-edit">
+        <form
+          class="popup__form popup__form_edit"
+          action="#"
+          name="popup-form-edit"
+        >
           <input
             placeholder="Жак-Ив Кусто"
             id="name"
-            class="popup__field"
+            class="popup__field popup__field_name"
             type="text"
           />
           <input
             placeholder="Исследователь океана"
             id="job"
-            class="popup__field"
+            class="popup__field popup__field_job"
             type="text"
           />
           <button
@@ -157,12 +70,76 @@
             Сохранить
           </button>
         </form>
-      <button
-        aria-label="закрыть всплывающее окно"
-        class="popup__button popup__button_close"
-        type="button"
-      ></button>
+        <button
+          aria-label="закрыть всплывающее окно"
+          class="popup__button popup__button_close popup__button_close_edit"
+          type="button"
+        ></button>
+      </div>
     </div>
+    <div class="popup popup__add">
+      <div class="popup__container">
+        <h3 class="popup__heading">Новое место</h3>
+        <form
+          class="popup__form popup__form_add"
+          action="#"
+          name="popup-form-edit"
+        >
+          <input
+            placeholder="Название"
+            id="name"
+            class="popup__field popup__field_heading"
+            type="text"
+          />
+          <input
+            placeholder="Ссылка на картинку"
+            id="job"
+            class="popup__field popup__field_source"
+            type="text"
+          />
+          <button
+            aria-label="сохранить внесенные изменения"
+            class="popup__button popup__button_save popup__button_save_add"
+            type="submit"
+          >
+            Создать
+          </button>
+        </form>
+        <button
+          aria-label="закрыть всплывающее окно"
+          class="popup__button popup__button_close popup__button_close_add"
+          type="button"
+        ></button>
+      </div>
+    </div>
+    <template class="elements__template">
+      <li class="elements__element">
+        <img src="" alt="картинка карточки с местом" class="elements__image" />
+        <div class="elements__flex">
+          <h3 class="elements__heading"></h3>
+          <button
+            aria-label="добавить в избранное"
+            type="button"
+            class="elements__button elements__button_like"
+          ></button>
+        </div>
+        <button class="elements__button elements__button_delete"></button>
+      </li>
+    </template>
+    <div class="popup popup-image">
+      <div class="popup-image__container">
+        <button
+          aria-label="закрыть всплывающее окно"
+          class="popup__button popup__button_close popup-image__button"
+          type="button"
+        ></button>
+        <img
+          src=""
+          alt="картинка карточки с местом"
+          class="popup-image__image"
+        />
+        <p class="popup-image__heading"></p>
+      </div>
     </div>
     <script src="./scripts/script.js"></script>
   </body>
