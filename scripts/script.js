@@ -25,8 +25,8 @@ function openPopup(popup) {
 
 btnOpenPopupEditProfile.addEventListener("click", function () {
   openPopup(popupEditProfile);
-  popupFieldName.value = '';
-  popupFieldJob.value = '';
+  popupFieldName.value = profileName.textContent;
+  popupFieldJob.value = profileJob.textContent;
 });
 
 formEditProfile.addEventListener("submit", (evt) => {
@@ -46,8 +46,7 @@ closeButtonEdit.addEventListener("click", function () {
 
 btnOpenPopupAddCard.addEventListener("click", function () {
   openPopup(popupAddCard);
-  popupFieldHeading.value = '';
-  popupFieldSource.value = '';
+  formAddCard.reset();
 });
 
 closeButtonAdd.addEventListener("click", function () {
@@ -67,6 +66,7 @@ function createCard(text, link) {
   const headingElement = newElement.querySelector(".elements__heading");
   const imageElement = newElement.querySelector(".elements__image");
   headingElement.textContent = text;
+  imageElement.alt = text;
   imageElement.src = link;
   imageElement.addEventListener("click", () => openImagePopup(text, link));
   setListenersForInitialCards(newElement);
@@ -98,15 +98,15 @@ function openImagePopup(name, link) {
   popupHeadingBig.textContent = name;
 }
 
-function submitAddCardForm(card) {
+function renderInitialCards(card) {
   card.forEach((element) => {
     elementsList.append(createCard(element.name, element.link));
   });
 }
 
-submitAddCardForm(initialCards);
+renderInitialCards(initialCards);
 
-function createNewCard(evt) {
+function submitAddCardForm(evt) {
   elementsList.prepend(
     createCard(popupFieldHeading.value, popupFieldSource.value)
   );
@@ -114,7 +114,7 @@ function createNewCard(evt) {
   closePopup(popupAddCard);
 }
 
-formAddCard.addEventListener("submit", createNewCard);
+formAddCard.addEventListener("submit", submitAddCardForm); 
 
 
 //___________________________________________________________________________
