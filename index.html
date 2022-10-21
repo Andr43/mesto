@@ -47,21 +47,30 @@
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form
           class="popup__form popup__form_edit"
+          name="edit"
           action="#"
-          name="popup-form-edit"
+          novalidate
         >
           <input
             placeholder="Имя"
             id="name"
             class="popup__field popup__field_name"
             type="text"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span class="popup__error name-error"></span>
           <input
             placeholder="Вид деятельности"
             id="job"
             class="popup__field popup__field_job"
             type="text"
+            minlength="2"
+            maxlength="200"
+            required
           />
+          <span class="popup__error job-error"></span>
           <button
             aria-label="сохранить внесенные изменения"
             class="popup__button popup__button_save"
@@ -82,23 +91,33 @@
         <h3 class="popup__heading">Новое место</h3>
         <form
           class="popup__form popup__form_add"
+          name="add"
           action="#"
-          name="popup-form-edit"
+          novalidate
         >
           <input
             placeholder="Название"
+            id="heading"
             class="popup__field popup__field_heading"
             type="text"
+            minlength="2"
+            maxlength="30"
+            required
           />
+          <span class="popup__error heading-error"></span>
           <input
             placeholder="Ссылка на картинку"
+            id="source"
             class="popup__field popup__field_source"
-            type="text"
+            type="url"
+            required
           />
+          <span class="popup__error source-error"></span>
           <button
             aria-label="сохранить внесенные изменения"
-            class="popup__button popup__button_save popup__button_save_add"
+            class="popup__button popup__button_save popup__button_save_add popup__button_invalid"
             type="submit"
+            disabled
           >
             Создать
           </button>
@@ -141,5 +160,6 @@
     </div>
     <script src="./scripts/constants.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

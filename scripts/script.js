@@ -2,12 +2,13 @@ const btnOpenPopupEditProfile = document.querySelector(".profile__button_edit");
 const btnOpenPopupAddCard = document.querySelector(".profile__button_add");
 const profileName = document.querySelector(".profile__name");
 const profileJob = document.querySelector(".profile__job");
-const popupContainer = document.querySelector(".popup");
+const popupContainer = document.querySelectorAll(".popup");
 const popupEditProfile = document.querySelector(".popup-edit");
 const popupAddCard = document.querySelector(".popup-add");
 const popupImage = document.querySelector(".popup-image");
 const formEditProfile = document.querySelector(".popup__form_edit");
 const formAddCard = document.querySelector(".popup__form_add");
+const popupField = document.querySelector(".popup__field");
 const popupFieldName = document.querySelector(".popup__field_name");
 const popupFieldJob = document.querySelector(".popup__field_job");
 const popupFieldHeading = document.querySelector(".popup__field_heading");
@@ -17,10 +18,12 @@ const closeButtonEdit = document.querySelector(".popup__button_close_edit");
 const closeButtonAdd = document.querySelector(".popup__button_close_add");
 const popupImageBig = document.querySelector(".popup-image__image");
 const popupHeadingBig = document.querySelector(".popup-image__heading");
+const popupError = document.querySelector(".popup__error");
 
 // код, открывающий и закрывающий окно изменения профиля, а также меняющий данные профиля
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  closePopupEsc(popup);
 }
 
 btnOpenPopupEditProfile.addEventListener("click", function () {
@@ -114,7 +117,4 @@ function submitAddCardForm(evt) {
   closePopup(popupAddCard);
 }
 
-formAddCard.addEventListener("submit", submitAddCardForm); 
-
-
-//___________________________________________________________________________
+formAddCard.addEventListener("submit", submitAddCardForm);
