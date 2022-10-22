@@ -42,7 +42,7 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup popup-edit">
+    <div class="popup popup_type_edit">
       <div class="popup__container">
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form
@@ -86,7 +86,7 @@
         ></button>
       </div>
     </div>
-    <div class="popup popup-add">
+    <div class="popup popup_type_add">
       <div class="popup__container">
         <h3 class="popup__heading">Новое место</h3>
         <form
@@ -129,18 +129,18 @@
         ></button>
       </div>
     </div>
-    <template class="elements__template">
-      <li class="elements__element">
-        <img src="#" alt="картинка карточки с местом" class="elements__image" />
-        <div class="elements__flex">
-          <h3 class="elements__heading"></h3>
+    <template class="card">
+      <li class="card__element">
+        <img src="#" alt="картинка карточки с местом" class="card__image" />
+        <div class="card__flex">
+          <h3 class="card__heading"></h3>
           <button
             aria-label="добавить в избранное"
             type="button"
-            class="elements__button elements__button_like"
+            class="card__button card__button_like"
           ></button>
         </div>
-        <button class="elements__button elements__button_delete"></button>
+        <button class="card__button card__button_delete"></button>
       </li>
     </template>
     <div class="popup popup-image">
