@@ -22,7 +22,10 @@ export const popupImageBig = document.querySelector(".popup-image__image");
 export const popupHeadingBig = document.querySelector(".popup-image__heading");
 export const popupError = document.querySelector(".popup__error");
 export const elementsList = document.querySelector(".elements__list");
-export const elementsTemplate = document.querySelector(".card").content;
+const deleteButton = document.querySelector(".card__button_delete");
+const likeButton = document.querySelector(".card__button_like");
+const closeButtonImage = document.querySelector(".popup-image__button");
+const imageElement = document.querySelector(".card__image");
 const initialCards = [
     {
         name: "Архыз",
@@ -109,25 +112,24 @@ closeButtonAdd.addEventListener("click", function () {
 });
 // _______________________________________________________________________
 // импорты классов, отрисовываающих карточки, создающих карточки пользователя и валидирующих поля попапов
-
-import {CardFromInitialCards, CardFromUser} from './card.js';
+import { Card } from './card.js';
 
 //код для отрисовки готовых карточек
 initialCards.forEach((initialCards) => {
-    const card = new CardFromInitialCards(initialCards, '.card');
+    const card = new Card(initialCards.name, initialCards.link, ".card__element", deleteButton, likeButton, closeButtonImage, imageElement, '.card');
     const cardElement = card.generateCard();
     document.querySelector('.elements__list').append(cardElement);
 });
 
 //код для создания карточек пользователя
-function createUserCard() {
-    formAddCard.addEventListener('submit', () => {
-        const userCard = new CardFromUser(popupFieldHeading.value, popupFieldSource.value, '.card');
-        const userCardElement = userCard.generateCard();
-        document.querySelector('.elements__list').prepend(userCardElement);
-        closePopup(popupAddCard)
-    })
-}
+// function createUserCard() {
+//     formAddCard.addEventListener('submit', () => {
+//         const userCard = new CardFromUser(popupFieldHeading.value, popupFieldSource.value, '.card');
+//         const userCardElement = userCard.generateCard();
+//         document.querySelector('.elements__list').prepend(userCardElement);
+//         closePopup(popupAddCard)
+//     })
+// }
 
 createUserCard();
 
