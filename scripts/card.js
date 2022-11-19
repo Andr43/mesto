@@ -1,13 +1,9 @@
 import {openPopup, popupImage, popupImageBig, popupHeadingBig, closePopup} from './index.js';
 
 export class Card {
-    constructor(name, link, deleteButton, likeButton, closeButtonImage, imageElement, templateSelector) {
+    constructor(name, link, templateSelector) {
         this._name = name;
         this._link = link;
-        this._deleteButton = deleteButton;
-        this._likeButton = likeButton;
-        this._closeButtonImage = closeButtonImage;
-        this._imageElement = imageElement;
         this._templateSelector = templateSelector;
     }
 
@@ -23,9 +19,11 @@ export class Card {
     generateCard() {
         this._element = this._createCard();
         this._setEventListeners(this._element);
-        this._element.querySelector(".card__heading").textContent = this._name;
-        this._element.querySelector(".card__image").alt = this._name;
-        this._element.querySelector(".card__image").src = this._link;
+        this._heading =  this._element.querySelector(".card__heading");
+        this._image = this._element.querySelector(".card__image");
+        this._heading.textContent = this._name;
+        this._image.alt = this._name;
+        this._image.src = this._link;
         return this._element;
     }
 
@@ -46,14 +44,17 @@ export class Card {
     }
 
     _setEventListeners(element) {
-        console.log(this._deleteButton)
-       element.querySelector(this._deleteButton).addEventListener('click', () => {
+        this._deleteButton = element.querySelector(".card__button_delete");
+        this._likeButton = element.querySelector(".card__button_like");
+        this._closeButtonImage = document.querySelector(".popup-image__button");
+        this._imageElement = element.querySelector(".card__image");
+       this._deleteButton.addEventListener('click', () => {
             this._deleteElement(this._deleteButton);
         });
         this._likeButton.addEventListener('click', () => {
             this._likeButtonToggle(this._likeButton);
         });
-        this._closeButtonImage.addEventListener("click", () => {
+        this._closeButtonImage.closest('.popup-image').addEventListener("click", () => {
             closePopup(popupImage);
         });
        this._imageElement.addEventListener('click', () => {
