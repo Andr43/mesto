@@ -45,11 +45,22 @@ const initialCards = [
     },
 ];
 const formClasses = {
+    formSelector: ".popup__form",
     inputSelector: ".popup__field",
     submitButtonSelector: ".popup__button_save",
     inactiveButtonClass: "popup__button_invalid",
     inputErrorClass: "popup__field_error",
     errorClass: "popup__error_active",
+};
+const formValidators = {};
+const enableValidation = (formClasses) => {
+    const formList = Array.from(document.querySelectorAll(formClasses.formSelector))
+    formList.forEach((formElement) => {
+        const validator = new FormValidator(formClasses, formElement)
+        const formName = formElement.getAttribute('name')
+        formValidators[formName] = validator;
+        validator.enableValidation();
+    });
 };
 
 // код, открывающий и закрывающий окно изменения профиля, а также меняющий данные профиля
@@ -92,6 +103,7 @@ formEditProfile.addEventListener("submit", (evt) => {
 btnOpenPopupAddCard.addEventListener("click", function () {
     openPopup(popupAddCard);
     formAddCard.reset();
+   formValidators['add'].disableButton();
 });
 
 popupContainer.forEach((popup) => {
@@ -112,18 +124,8 @@ formAddCard.addEventListener('submit', () => {
     closePopup(popupAddCard);
     });
 
-//код для валидации полей попапов
-const newFormValidatorAdd = new FormValidator(formClasses, formAddCard);
-const validatorElementAdd = newFormValidatorAdd.enableValidation();
-const newFormValidatorEdit = new FormValidator(formClasses, formEditProfile);
-const validatorElementEdit = newFormValidatorEdit.enableValidation();
+// код валидации полей попапов
+enableValidation(formClasses);
 
-
-//код для закрытия попапов по клику на оверлей
-popupContainer.forEach((popupElement) => {
-    popupElement.addEventListener("mousedown", (evt) => {
-        if (evt.currentTarget === evt.target) {
-            closePopup(popupElement);
-        }
-    });
-});
+formValidators['add'];
+formValidators['edit'];
