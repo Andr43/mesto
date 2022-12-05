@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        src="./images/header__logo.svg"
+        alt="логотип Место"
+        class="header__logo"
+      />
+    </header>
+    <main>
+      <section class="profile">
+        <img
+          src="./images/profile__avatar.jpg"
+          alt="аватар"
+          class="profile__avatar"
+        />
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button
+          aria-label="перейти к полям ввода для изменения профиля"
+          type="button"
+          class="profile__button profile__button_edit"
+        ></button>
+        <button
+          aria-label="добавить новую карточку"
+          type="button"
+          class="profile__button profile__button_add"
+        ></button>
+        <p class="profile__job">Исследователь океана</p>
+      </section>
+      <section class="elements">
+        <ul class="elements__list"></ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">© 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_type_edit">
+      <div class="popup__container">
+        <h3 class="popup__heading">Редактировать профиль</h3>
+        <form
+          class="popup__form popup__form_edit"
+          name="edit"
+          action="#"
+          novalidate
+        >
+          <input
+            placeholder="Имя"
+            id="name"
+            class="popup__field popup__field_name"
+            type="text"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <span class="popup__error name-error"></span>
+          <input
+            placeholder="Вид деятельности"
+            id="job"
+            class="popup__field popup__field_job"
+            type="text"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <span class="popup__error job-error"></span>
+          <button
+            aria-label="сохранить внесенные изменения"
+            class="popup__button popup__button_save"
+            type="submit"
+          >
+            Сохранить
+          </button>
+        </form>
+        <button
+          aria-label="закрыть всплывающее окно"
+          class="popup__button popup__button_close popup__button_close_edit"
+          type="button"
+        ></button>
+      </div>
+    </div>
+    <div class="popup popup_type_add">
+      <div class="popup__container">
+        <h3 class="popup__heading">Новое место</h3>
+        <form
+          class="popup__form popup__form_add"
+          name="add"
+          action="#"
+          novalidate
+        >
+          <input
+            placeholder="Название"
+            id="heading"
+            class="popup__field popup__field_heading"
+            type="text"
+            minlength="2"
+            maxlength="30"
+            required
+          />
+          <span class="popup__error heading-error"></span>
+          <input
+            placeholder="Ссылка на картинку"
+            id="source"
+            class="popup__field popup__field_source"
+            type="url"
+            required
+          />
+          <span class="popup__error source-error"></span>
+          <button
+            aria-label="сохранить внесенные изменения"
+            class="popup__button popup__button_save popup__button_save_add popup__button_invalid"
+            type="submit"
+            disabled
+          >
+            Создать
+          </button>
+        </form>
+        <button
+          aria-label="закрыть всплывающее окно"
+          class="popup__button popup__button_close popup__button_close_add"
+          type="button"
+        ></button>
+      </div>
+    </div>
+    <template class="card">
+      <li class="card__element">
+        <img src="#" alt="картинка карточки с местом" class="card__image" />
+        <div class="card__flex">
+          <h3 class="card__heading"></h3>
+          <button
+            aria-label="добавить в избранное"
+            type="button"
+            class="card__button card__button_like"
+          ></button>
+        </div>
+        <button aria-label="удалить карточку"
+                type="button"
+                class="card__button card__button_delete"></button>
+      </li>
+    </template>
+    <div class="popup popup-image">
+      <div class="popup-image__container">
+        <button
+          aria-label="закрыть всплывающее окно"
+          class="popup__button popup__button_close popup-image__button"
+          type="button"
+        ></button>
+        <img
+          src="#"
+          alt="картинка карточки с местом"
+          class="popup-image__image"
+        />
+        <p class="popup-image__heading"></p>
+      </div>
+    </div>
+    <script type="module" src="scripts/pages/index.js"></script>
+  </body>
+</html>
