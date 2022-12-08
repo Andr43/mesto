@@ -1,3 +1,4 @@
+import '../../pages/index.css';
 import {
     btnOpenPopupEditProfile,
     btnOpenPopupAddCard,
@@ -35,7 +36,6 @@ function createCard(name, link) {
     const cardElement = card.generateCard();
     return cardElement;
 };
-
 const PopupWithFormEdit = new PopupWithForm(popupEditProfile, {
     formFunction: () => {
         userInfo.setUserInfo(popupFieldName, popupFieldJob);
