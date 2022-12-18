@@ -1,8 +1,8 @@
 export class Section {
-    constructor({items, renderer}, elementsContainer) {
+    constructor({items, renderer}, elementsContainerSelector) {
         this._items = items;
         this._renderer = renderer;
-        this.elementsContainer = elementsContainer;
+        this.elementsContainerSelector = elementsContainerSelector;
     }
 
     generateCard() {
@@ -12,6 +12,6 @@ export class Section {
     }
 
     addItem(item) {
-        this.elementsContainer.append(item);
+        this.elementsContainerSelector.prepend(item);
     }
 }

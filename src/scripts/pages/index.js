@@ -4,63 +4,32 @@ import {
     btnOpenPopupAddCard,
     popupEditProfile,
     popupAddCard,
-    popupImage,
     popupFieldName,
     popupFieldJob,
     popupFieldHeading,
     popupFieldSource,
-    popupImageBig,
-    popupHeadingBig,
     elementsList,
     initialCards,
     formClasses,
     formValidators,
     enableValidation,
-    popupEdit,
-    popupAdd,
     userInfo,
+    popupOpenImage
 } from '../utils/constants.js';
 import {Card} from '../components/Card.js';
-import {PopupWithImage} from "../components/PopupWithImage.js";
 import {PopupWithForm} from "../components/PopupWithForm.js";
 import {Section} from "../components/Section.js";
 
 function createCard(name, link) {
     const card = new Card(name, link, '.card', {
         handleCardClick: () => {
-            const popupOpenImage = new PopupWithImage(popupImage, name, link);
-            popupOpenImage.open(popupImageBig, popupHeadingBig);
+            popupOpenImage.open(name, link);
             popupOpenImage.setEventListeners();
         }
     });
     const cardElement = card.generateCard();
     return cardElement;
 };
-const PopupWithFormEdit = new PopupWithForm(popupEditProfile, {
-    formFunction: () => {
-        userInfo.setUserInfo(popupFieldName, popupFieldJob);
-    }
-});
-PopupWithFormEdit.close(PopupWithFormEdit.setEventListeners());
-
-const PopupWithFormAdd = new PopupWithForm(popupAddCard, {
-    formFunction: () => {
-        elementsList.prepend(createCard(popupFieldHeading.value, popupFieldSource.value));
-    }
-});
-PopupWithFormAdd.close(PopupWithFormAdd.setEventListeners());
-
-btnOpenPopupEditProfile.addEventListener("click", function () {
-    userInfo.getUserInfo(popupFieldName, popupFieldJob);
-    popupEdit.open();
-    popupEdit.setEventListeners();
-});
-
-btnOpenPopupAddCard.addEventListener("click", function () {
-    popupAdd.open();
-    popupAdd.setEventListeners();
-    formValidators['add'].disableButton();
-});
 
 const section = new Section({items: initialCards, renderer: renderCard}, elementsList);
 section.generateCard();
@@ -68,10 +37,36 @@ section.generateCard();
 function renderCard(cardData) {
     const cardElement = createCard(cardData.name, cardData.link);
     return cardElement;
-}
+};
 
-// код валидации полей попапов
+const popupWithFormEdit = new PopupWithForm(popupEditProfile, {
+    setCardData: () => {
+        userInfo.setUserInfo({userObject: {
+            name: popupFieldName.value,
+            job: popupFieldJob.value
+                }
+            });
+    }
+});
+popupWithFormEdit.setEventListeners();
+
+const popupWithFormAdd = new PopupWithForm(popupAddCard, {
+    setCardData: () => {
+        section.addItem(createCard(popupFieldHeading.value, popupFieldSource.value));
+    }
+});
+popupWithFormAdd.setEventListeners();
+
+btnOpenPopupEditProfile.addEventListener("click", function () {
+    popupWithFormEdit.open();
+    const headingsValues = Object.values(userInfo.getUserInfo());
+    popupFieldName.value = headingsValues[0];
+    popupFieldJob.value = headingsValues[1];
+});
+
+btnOpenPopupAddCard.addEventListener("click", function () {
+    popupWithFormAdd.open();
+    formValidators['add'].disableButton();
+});
+
 enableValidation(formClasses);
-
-formValidators['add'];
-formValidators['edit'];

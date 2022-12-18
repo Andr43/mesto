@@ -1,6 +1,7 @@
 import {FormValidator} from "../components/FormValidator.js";
 import {Popup} from "../components/Popup.js";
 import {UserInfo} from "../components/UserInfo.js";
+import {PopupWithImage} from "../components/PopupWithImage.js";
 
 export const btnOpenPopupEditProfile = document.querySelector(".profile__button_edit");
 export const btnOpenPopupAddCard = document.querySelector(".profile__button_add");
@@ -66,8 +67,9 @@ export const enableValidation = (formClasses) => {
         validator.enableValidation();
     });
 };
-export const popupEdit = new Popup(popupEditProfile);
-export const popupAdd = new Popup(popupAddCard);
-export const popupImageOpener = new Popup(popupImage);
-export const userInfo = new UserInfo(profileName, profileJob);
+export const userInfo = new UserInfo({
+    nameSelector: ".profile__name",
+    jobSelector: ".profile__job"
+});
+export const popupOpenImage = new PopupWithImage(popupImage, popupImageBig, popupHeadingBig);
 
