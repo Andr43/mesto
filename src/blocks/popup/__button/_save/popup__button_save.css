@@ -3,6 +3,7 @@
   color: #fff;
   height: 50px;
   margin: 0 8.372%;
+  margin-top: 18px;
   margin-bottom: 37px;
   padding: 0;
   font-size: 18px;
@@ -18,6 +19,7 @@
   .popup__button_save {
     font-size: 14px;
     line-height: 16.94px;
+    margin-top: 15px;
     margin-bottom: 25px;
   }
 }
