@@ -1,21 +1,19 @@
 import {Popup} from "./Popup.js";
 
 export class PopupWithForm extends Popup {
-    constructor(popupSelector, {setCardData}) {
-        super(popupSelector);
+    constructor({popupSelector}, {setCardData}) {
+        super({popupSelector});
         this._setCardData = setCardData;
         this._form = this._popupSelector.querySelector('.popup__form');
-        this._fieldList = Array.from(
-            this._form.querySelectorAll('.popup__field')
-        );
+        this._fieldList = this._form.querySelectorAll('.popup__field');
     }
 
     _getInputValues() {
-        this._field = {};
-        this._fieldList.forEach((fieldElement) => {
-            this._field[fieldElement.name] = fieldElement.value;
-        });
-        return this._field;
+    const field = {};
+    this._fieldList.forEach((fieldElement) => {
+        field[fieldElement.id] = fieldElement.value;
+    });
+        return field;
     }
 
     setEventListeners() {

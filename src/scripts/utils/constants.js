@@ -1,5 +1,4 @@
 import {FormValidator} from "../components/FormValidator.js";
-import {Popup} from "../components/Popup.js";
 import {UserInfo} from "../components/UserInfo.js";
 import {PopupWithImage} from "../components/PopupWithImage.js";
 
@@ -71,5 +70,5 @@ export const userInfo = new UserInfo({
     nameSelector: ".profile__name",
     jobSelector: ".profile__job"
 });
-export const popupOpenImage = new PopupWithImage(popupImage, popupImageBig, popupHeadingBig);
+export const popupOpenImage = new PopupWithImage({popupSelector: popupImage});
 

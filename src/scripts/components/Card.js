@@ -19,10 +19,12 @@ export class Card {
         this._element = this._createCard();
         this._heading = this._element.querySelector(".card__heading");
         this._image = this._element.querySelector(".card__image");
+        this._deleteButton = this._element.querySelector(".card__button_delete");
+        this._likeButton = this._element.querySelector(".card__button_like");
         this._heading.textContent = this._name;
         this._image.alt = this._name;
         this._image.src = this._link;
-        this._setEventListeners(this._element);
+        this._setEventListeners();
         return this._element;
     }
 
@@ -35,9 +37,7 @@ export class Card {
         this._likeButton.classList.toggle("card__button_like_active");
     }
 
-    _setEventListeners(element) {
-        this._deleteButton = element.querySelector(".card__button_delete");
-        this._likeButton = element.querySelector(".card__button_like");
+    _setEventListeners() {
         this._deleteButton.addEventListener('click', () => {
             this._deleteElement();
         });

@@ -47,14 +47,14 @@ export class FormValidator {
         }
     };
 
-    _setEventListeners(formElement) {
-        this._buttonElement = formElement.querySelector(this._submitButtonSelector);
+    _setEventListeners() {
+        this._buttonElement = this._form.querySelector(this._submitButtonSelector);
         this._fieldList = Array.from(
-            formElement.querySelectorAll(this._inputSelector)
+            this._form.querySelectorAll(this._inputSelector)
         );
         this._fieldList.forEach((fieldElement) => {
             fieldElement.addEventListener("input", () => {
-                this._isValid(formElement, fieldElement);
+                this._isValid(this._form, fieldElement);
             });
         });
     };
@@ -65,6 +65,6 @@ export class FormValidator {
     }
 
     enableValidation() {
-        this._setEventListeners(this._form);
+        this._setEventListeners();
     };
 }

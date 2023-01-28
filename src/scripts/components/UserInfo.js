@@ -5,14 +5,14 @@ export class UserInfo {
   }
 
   getUserInfo() {
-return {
-    name: this._name.textContent,
-    job: this._job.textContent
-}
+    return {
+      name: this._name.textContent,
+      job: this._job.textContent,
+    };
   }
 
-  setUserInfo({userObject}) {
-    this._name.textContent = userObject.name;
-    this._job.textContent = userObject.job;
+  setUserInfo({ fieldName, fieldJob }) {
+    this._name.textContent = fieldName;
+    this._job.textContent = fieldJob;
   }
 }
