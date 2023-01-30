@@ -1,7 +1,3 @@
-import {FormValidator} from "../components/FormValidator.js";
-import {UserInfo} from "../components/UserInfo.js";
-import {PopupWithImage} from "../components/PopupWithImage.js";
-
 export const btnOpenPopupEditProfile = document.querySelector(".profile__button_edit");
 export const btnOpenPopupAddCard = document.querySelector(".profile__button_add");
 export const profileName = document.querySelector(".profile__name");
@@ -10,8 +6,8 @@ export const popupContainer = document.querySelectorAll(".popup");
 export const popupEditProfile = document.querySelector(".popup_type_edit");
 export const popupAddCard = document.querySelector(".popup_type_add");
 export const popupImage = document.querySelector(".popup-image");
-export const formEditProfile = document.querySelector(".popup__form_edit");
-export const formAddCard = document.querySelector(".popup__form_add");
+export const formEditProfile = document.forms["edit"];
+export const formAddCard = document.forms["add"];
 export const popupFieldName = document.querySelector(".popup__field_name");
 export const popupFieldJob = document.querySelector(".popup__field_job");
 export const popupFieldHeading = document.querySelector(".popup__field_heading");
@@ -57,18 +53,4 @@ export const formClasses = {
     errorClass: "popup__error_active",
 };
 export const formValidators = {};
-export const enableValidation = (formClasses) => {
-    const formList = Array.from(document.querySelectorAll(formClasses.formSelector))
-    formList.forEach((formElement) => {
-        const validator = new FormValidator(formClasses, formElement)
-        const formName = formElement.getAttribute('name')
-        formValidators[formName] = validator;
-        validator.enableValidation();
-    });
-};
-export const userInfo = new UserInfo({
-    nameSelector: ".profile__name",
-    jobSelector: ".profile__job"
-});
-export const popupOpenImage = new PopupWithImage({popupSelector: popupImage});
 
