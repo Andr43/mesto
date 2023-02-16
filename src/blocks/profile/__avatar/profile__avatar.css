@@ -8,6 +8,7 @@
   grid-row-end: 3;
   align-self: center;
 }
+
 @media screen and (max-width: 768px) {
   .profile__avatar {
     width: 140px;

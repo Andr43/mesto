@@ -1,0 +1,28 @@
+.error__server{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 0;
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .error__server {
+    top: 30vh;
+    left: 4%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .error__server {
+    top: 30vh;
+    left: 7%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 450px) {
+  .error__server {
+    top: 30vh;
+    left: 5vw;
+  }
+}

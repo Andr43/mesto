@@ -21,6 +21,7 @@ export class PopupWithForm extends Popup {
         this._form.addEventListener('submit', (evt) => {
             this._setCardData(this._getInputValues());
             evt.preventDefault();
+            setTimeout(() => {this.close()}, 2000);
             this.close();
         })
     }

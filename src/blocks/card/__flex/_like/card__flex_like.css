@@ -1,0 +1,6 @@
+.card__flex_like {
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding-bottom: 22px;
+}
