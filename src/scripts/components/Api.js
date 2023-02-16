@@ -1,42 +1,22 @@
 export class Api{
-  constructor(authorizationCode, errorBlock, errorHeading, main){
+  constructor(authorizationCode){
 this.authorizationCode = authorizationCode;
-this._errorBlock = errorBlock;
-this._errorHeading = errorHeading;
-this._main = main
   }
 
-  _dataSaving(isSaving, saveButtonSelector, textButton){
-const saveButton = document.querySelector(saveButtonSelector);
-if(isSaving){
-saveButton.textContent = 'Сохранение...'
-} else (
-  saveButton.textContent = textButton
-)
+  _checkStatus(res){
+    if (res.ok) {
+      return res.json()
+    }
+    return Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`)
   }
 
-  _showError(err){
-    this._main.classList.add('invisible');
-    this._errorBlock.classList.add('visible');
-    this._errorHeading.textContent = err;
-  }
-
-  getUserInfo(nameText, jobText, imageSource, userId){
+  getUserInfo(){
   return fetch('https://nomoreparties.co/v1/cohort-59/users/me', {
   headers: {
     authorization: this.authorizationCode
   }
 })
-  .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-  .then((result) => {
-    nameText.textContent = result.name;
-    jobText.textContent = result.about;
-    imageSource.src = result.avatar;
-    userId.id = result._id;
-  })
-  .catch((err) => {
-    this._showError(err)
-  })
+  .then(this._checkStatus)
   }
 
 createCard(){
@@ -45,14 +25,10 @@ createCard(){
     authorization: this.authorizationCode
   }
 })
-  .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-  .catch((err) => {
-    this._showError(err)
-  })
+  .then(this._checkStatus)
   }
 
- updateUserInfo(name, about, saveButton){
-  this._dataSaving(true, saveButton)
+ updateUserInfo(name, about){
     return fetch('https://nomoreparties.co/v1/cohort-59/users/me', {
     method: 'PATCH',
     headers: {
@@ -64,15 +40,10 @@ createCard(){
       about: about
     })
   })
-    .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-    .catch((err) => {
-      this._showError(err)
-    })
-    .finally(() => {this._dataSaving(false, saveButton, 'Сохранить')})
+    .then(this._checkStatus)
   }
 
-    addNewCard(data, saveButton){
-      this._dataSaving(true, saveButton)
+    addNewCard(data){
       return fetch('https://mesto.nomoreparties.co/v1/cohort-59/cards', {
       method: 'POST',
       headers: {
@@ -84,11 +55,7 @@ createCard(){
         link: data.source,
       })
     })
-      .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-      .catch((err) => {
-        this._showError(err)
-      })
-      .finally(() => {this._dataSaving(false, saveButton, 'Создать')})
+      .then(this._checkStatus)
     }
 
     deleteCard(id){
@@ -98,10 +65,7 @@ createCard(){
         authorization: this.authorizationCode,
       },
       })
-      .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-      .catch((err) => {
-        this._showError(err)
-      })
+      .then(this._checkStatus)
     }
 
     putLike(id){
@@ -111,10 +75,7 @@ createCard(){
         authorization: this.authorizationCode,
       },
       })
-      .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-      .catch((err) => {
-        this._showError(err)
-      })
+      .then(this._checkStatus)
     }
 
     deleteLike(id){
@@ -124,14 +85,10 @@ createCard(){
         authorization: this.authorizationCode,
       },
       })
-      .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-      .catch((err) => {
-        this._showError(err)
-      })
+      .then(this._checkStatus)
     }
 
-    updateUserImage(imageSource, saveButton){
-      this._dataSaving(true, saveButton)
+    updateUserImage(imageSource){
       return fetch('https://nomoreparties.co/v1/cohort-59/users/me/avatar', {
       method: 'PATCH',
       headers: {
@@ -142,10 +99,6 @@ createCard(){
         avatar: imageSource
       })
     })
-      .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}. Проверьте правильность указанного URL-адреса.`))
-      .catch((err) => {
-        this._showError(err)
-      })
-      .finally(() => {this._dataSaving(false, saveButton, 'Сохранить')})
+      .then(this._checkStatus)
     }
 }
