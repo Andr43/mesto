@@ -1,13 +1,13 @@
 @import url('../vendor/normalize.css');
 @import url('../vendor/fonts/Inter-Web/fonts.css');
 @import url('../blocks/page/page.css');
-@import url('../blocks/error/error__server.css');
-@import url('../blocks/error/_heading/error__server_heading.css');
+@import url('../blocks/error-server/error-server.css');
+@import url('../blocks/error-server/__heading/error-server__heading.css');
 @import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/header__logo.css');
 @import url('../blocks/profile/profile.css');
-@import url('../blocks/profile/__avatar/_image/profile__avatar_image.css');
 @import url('../blocks/profile/__avatar/profile__avatar.css');
+@import url('../blocks/profile/__image/profile__image.css');
 @import url('../blocks/profile/__background/profile__background.css');
 @import url('../blocks/profile/__name/profile__name.css');
 @import url('../blocks/profile/__job/profile__job.css');
