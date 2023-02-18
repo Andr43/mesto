@@ -14,9 +14,6 @@
         class="header__logo"
       />
     </header>
-    <div class="error-server">
-      <p class="error-server__heading"></p>
-    </div>
     <main class="main">
       <section class="profile">
         <div class="profile__avatar">
@@ -175,13 +172,20 @@
     <div class="popup popup_type_delete">
       <div class="popup__container popup__container_delete">
         <h3 class="popup__heading popup__heading_delete">Вы уверены?</h3>
-        <button
-          aria-label="удалить карточку"
-          class="popup__button popup__button_save popup__button_save_delete"
-          type="submit"
+        <form
+          class="popup__form popup__form_delete"
+          name="add"
+          action="#"
+          novalidate
         >
-          Да
-        </button>
+          <button
+            aria-label="удалить карточку"
+            class="popup__button popup__button_save popup__button_save_delete"
+            type="submit"
+          >
+            Да
+          </button>
+        </form>
         <button
           aria-label="закрыть всплывающее окно"
           class="popup__button popup__button_close popup__button_close_delete"

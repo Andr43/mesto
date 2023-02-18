@@ -1,5 +1,10 @@
 export class UserInfo {
-  constructor({ nameSelector, jobSelector, avatarSelector, avatarImageSelector }) {
+  constructor({
+    nameSelector,
+    jobSelector,
+    avatarSelector,
+    avatarImageSelector,
+  }) {
     this._name = document.querySelector(nameSelector);
     this._job = document.querySelector(jobSelector);
     this._avatar = document.querySelector(avatarSelector);
@@ -18,18 +23,18 @@ export class UserInfo {
     this._job.textContent = fieldJob;
   }
 
-  setImageSource({fieldSource}){
-    this._avatarImage.src = fieldSource
+  setImageSource({ fieldSource }) {
+    this._avatarImage.src = fieldSource;
   }
 
   hoverUserImage(imageBackground, editButton) {
-    this._avatar.addEventListener('mouseover', () => {
-         imageBackground.classList.add('profile_visible');
-         editButton.classList.add('profile_visible');
-  });
-  this._avatar.addEventListener('mouseout', () => {
-      imageBackground.classList.remove('profile_visible');
-      editButton.classList.remove('profile_visible');
-  })
-}
+    this._avatar.addEventListener("mouseover", () => {
+      imageBackground.classList.add("profile_visible");
+      editButton.classList.add("profile_visible");
+    });
+    this._avatar.addEventListener("mouseout", () => {
+      imageBackground.classList.remove("profile_visible");
+      editButton.classList.remove("profile_visible");
+    });
+  }
 }
