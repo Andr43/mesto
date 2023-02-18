@@ -70,7 +70,7 @@ const popupDeleteCard = new PopupWithConfirmation(
 popupDeleteCard.setEventListeners();
 
 function createCard(data) {
-  const card = new Card(data, popupDeleteCard, ".card", formEditProfile, {
+  const card = new Card(data, ".card", formEditProfile, {
     handleCardClick: () => {
       popupOpenImage.open(data);
     },

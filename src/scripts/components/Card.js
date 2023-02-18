@@ -1,7 +1,6 @@
 export class Card {
   constructor(
     data,
-    popup,
     templateSelector,
     userId,
     { handleCardClick, handlePopupDeleteOpen, handleLikeClick }
@@ -12,7 +11,6 @@ export class Card {
     this._userId = userId.id;
     this._cardOwnerId = data.owner._id;
     this._likesObject = data.likes;
-    this._popup = popup;
     this._templateSelector = templateSelector;
     this._handleCardClick = handleCardClick;
     this._handlePopupDeleteOpen = handlePopupDeleteOpen;
@@ -34,9 +32,6 @@ export class Card {
     this._likes = this._element.querySelector(".card__likes");
     this._deleteButton = this._element.querySelector(".card__button_delete");
     this._likeButton = this._element.querySelector(".card__button_like");
-    this._submitButtonPopupDelete = document.querySelector(
-      ".popup__button_save_delete"
-    );
     this._deleteButton.classList.add("visible");
     this._heading.textContent = this._name;
     this._image.alt = this._name;
