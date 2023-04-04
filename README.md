@@ -33,8 +33,12 @@
 Инструкция по установке:
 
 git clone https://github.com/Andr43/mesto.git
+
 cd mesto
+
 npm i webpack --save-dev
+
 npm run build
+
 npm run dev
 
