@@ -29,12 +29,12 @@ export class UserInfo {
 
   hoverUserImage(imageBackground, editButton) {
     this._avatar.addEventListener("mouseover", () => {
-      imageBackground.classList.add("profile_visible");
-      editButton.classList.add("profile_visible");
+      imageBackground.classList.add("visible");
+      editButton.classList.add("visible");
     });
     this._avatar.addEventListener("mouseout", () => {
-      imageBackground.classList.remove("profile_visible");
-      editButton.classList.remove("profile_visible");
+      imageBackground.classList.remove("visible");
+      editButton.classList.remove("visible");
     });
   }
 }
